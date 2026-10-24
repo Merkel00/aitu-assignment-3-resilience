@@ -1,0 +1,4 @@
+NAME                            READY   STATUS    RESTARTS   AGE    IP            NODE                    NOMINATED NODE   READINESS GATES
+registration-6864c68c89-spwfc   0/1     Running   0          107s   10.244.0.12   desktop-control-plane   <none>           <none>
+registration-757c8dd496-pnj9n   1/1     Running   0          2m7s   10.244.0.10   desktop-control-plane   <none>           <none>
+registration-757c8dd496-xmqs6   1/1     Running   0          2m7s   10.244.0.11   desktop-control-plane   <none>           <none>

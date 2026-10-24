@@ -1,0 +1,49 @@
+Name:                   registration
+Namespace:              aitu-demo
+CreationTimestamp:      Sun, 25 Oct 2026 03:44:33 +0500
+Labels:                 app=registration
+Annotations:            deployment.kubernetes.io/revision: 3
+Selector:               app=registration
+Replicas:               2 desired | 1 updated | 3 total | 2 available | 1 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app=registration
+  Containers:
+   registration:
+    Image:      registration-demo:1.0.0
+    Port:       8080/TCP (http)
+    Host Port:  0/TCP (http)
+    Limits:
+      cpu:     500m
+      memory:  256Mi
+    Requests:
+      cpu:      100m
+      memory:   128Mi
+    Liveness:   http-get http://:http/healthz delay=5s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/readyz delay=2s timeout=2s period=5s #success=1 #failure=2
+    Environment:
+      DB_AVAILABLE:  false
+    Mounts:          <none>
+  Volumes:           <none>
+  Node-Selectors:    <none>
+  Tolerations:       <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  registration-546b8c8b4c (0/0 replicas created), registration-757c8dd496 (2/2 replicas created)
+NewReplicaSet:   registration-6864c68c89 (1/1 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  25m    deployment-controller  Scaled up replica set registration-546b8c8b4c from 0 to 2
+  Normal  ScalingReplicaSet  19m    deployment-controller  Scaled up replica set registration-757c8dd496 from 0 to 1
+  Normal  ScalingReplicaSet  16m    deployment-controller  Scaled down replica set registration-546b8c8b4c from 2 to 1
+  Normal  ScalingReplicaSet  16m    deployment-controller  Scaled up replica set registration-757c8dd496 from 1 to 2
+  Normal  ScalingReplicaSet  16m    deployment-controller  Scaled down replica set registration-546b8c8b4c from 1 to 0
+  Normal  ScalingReplicaSet  2m29s  deployment-controller  Scaled down replica set registration-757c8dd496 from 2 to 0
+  Normal  ScalingReplicaSet  2m11s  deployment-controller  Scaled up replica set registration-757c8dd496 from 0 to 2
+  Normal  ScalingReplicaSet  111s   deployment-controller  Scaled up replica set registration-6864c68c89 from 0 to 1

@@ -1,0 +1,56 @@
+LAST SEEN   TYPE      REASON              OBJECT                               MESSAGE
+23m         Normal    SuccessfulCreate    replicaset/registration-546b8c8b4c   Created pod: registration-546b8c8b4c-fbckw
+20m         Normal    Pulling             pod/registration-546b8c8b4c-2b2jl    Pulling image "registration-demo:1.0.0"
+23m         Normal    Scheduled           pod/registration-546b8c8b4c-fbckw    Successfully assigned aitu-demo/registration-546b8c8b4c-fbckw to desktop-control-plane
+20m         Normal    Pulling             pod/registration-546b8c8b4c-fbckw    Pulling image "registration-demo:1.0.0"
+23m         Normal    SuccessfulCreate    replicaset/registration-546b8c8b4c   Created pod: registration-546b8c8b4c-2b2jl
+23m         Normal    ScalingReplicaSet   deployment/registration              Scaled up replica set registration-546b8c8b4c from 0 to 2
+23m         Normal    Scheduled           pod/registration-546b8c8b4c-2b2jl    Successfully assigned aitu-demo/registration-546b8c8b4c-2b2jl to desktop-control-plane
+20m         Warning   Failed              pod/registration-546b8c8b4c-fbckw    Failed to pull image "registration-demo:1.0.0": failed to pull and unpack image "docker.io/library/registration-demo:1.0.0": failed to resolve reference "docker.io/library/registration-demo:1.0.0": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+17m         Normal    BackOff             pod/registration-546b8c8b4c-fbckw    Back-off pulling image "registration-demo:1.0.0"
+17m         Warning   Failed              pod/registration-546b8c8b4c-fbckw    Error: ImagePullBackOff
+20m         Warning   Failed              pod/registration-546b8c8b4c-fbckw    Error: ErrImagePull
+20m         Warning   Failed              pod/registration-546b8c8b4c-2b2jl    Failed to pull image "registration-demo:1.0.0": failed to pull and unpack image "docker.io/library/registration-demo:1.0.0": failed to resolve reference "docker.io/library/registration-demo:1.0.0": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+20m         Warning   Failed              pod/registration-546b8c8b4c-2b2jl    Error: ErrImagePull
+17m         Normal    BackOff             pod/registration-546b8c8b4c-2b2jl    Back-off pulling image "registration-demo:1.0.0"
+17m         Warning   Failed              pod/registration-546b8c8b4c-2b2jl    Error: ImagePullBackOff
+17m         Normal    SuccessfulCreate    replicaset/registration-757c8dd496   Created pod: registration-757c8dd496-lclhz
+17m         Normal    Scheduled           pod/registration-757c8dd496-lclhz    Successfully assigned aitu-demo/registration-757c8dd496-lclhz to desktop-control-plane
+17m         Normal    ScalingReplicaSet   deployment/registration              Scaled up replica set registration-757c8dd496 from 0 to 1
+14m         Warning   ErrImageNeverPull   pod/registration-757c8dd496-lclhz    Container image "registration-demo:1.0.0" is not present with pull policy of Never
+15m         Warning   Failed              pod/registration-757c8dd496-lclhz    Error: ErrImageNeverPull
+14m         Normal    Started             pod/registration-757c8dd496-lclhz    Container started
+14m         Normal    Created             pod/registration-757c8dd496-lclhz    Container created
+14m         Normal    Pulled              pod/registration-757c8dd496-lclhz    Container image "registration-demo:1.0.0" already present on machine and can be accessed by the pod
+14m         Normal    ScalingReplicaSet   deployment/registration              Scaled down replica set registration-546b8c8b4c from 2 to 1
+14m         Normal    Scheduled           pod/registration-757c8dd496-nrkjj    Successfully assigned aitu-demo/registration-757c8dd496-nrkjj to desktop-control-plane
+14m         Normal    ScalingReplicaSet   deployment/registration              Scaled up replica set registration-757c8dd496 from 1 to 2
+14m         Normal    SuccessfulDelete    replicaset/registration-546b8c8b4c   Deleted pod: registration-546b8c8b4c-2b2jl
+14m         Normal    SuccessfulCreate    replicaset/registration-757c8dd496   Created pod: registration-757c8dd496-nrkjj
+14m         Normal    Started             pod/registration-757c8dd496-nrkjj    Container started
+14m         Normal    Created             pod/registration-757c8dd496-nrkjj    Container created
+14m         Normal    Pulled              pod/registration-757c8dd496-nrkjj    Container image "registration-demo:1.0.0" already present on machine and can be accessed by the pod
+14m         Normal    SuccessfulDelete    replicaset/registration-546b8c8b4c   Deleted pod: registration-546b8c8b4c-fbckw
+14m         Normal    ScalingReplicaSet   deployment/registration              Scaled down replica set registration-546b8c8b4c from 1 to 0
+12m         Normal    Killing             pod/registration-757c8dd496-lclhz    Stopping container registration
+12m         Normal    Scheduled           pod/registration-757c8dd496-t5sjk    Successfully assigned aitu-demo/registration-757c8dd496-t5sjk to desktop-control-plane
+12m         Normal    SuccessfulCreate    replicaset/registration-757c8dd496   Created pod: registration-757c8dd496-t5sjk
+12m         Normal    Created             pod/registration-757c8dd496-t5sjk    Container created
+12m         Normal    Started             pod/registration-757c8dd496-t5sjk    Container started
+12m         Normal    Pulled              pod/registration-757c8dd496-t5sjk    Container image "registration-demo:1.0.0" already present on machine and can be accessed by the pod
+32s         Normal    Killing             pod/registration-757c8dd496-t5sjk    Stopping container registration
+32s         Normal    SuccessfulDelete    replicaset/registration-757c8dd496   Deleted pod: registration-757c8dd496-t5sjk
+32s         Normal    ScalingReplicaSet   deployment/registration              Scaled down replica set registration-757c8dd496 from 2 to 0
+32s         Normal    SuccessfulDelete    replicaset/registration-757c8dd496   Deleted pod: registration-757c8dd496-nrkjj
+32s         Normal    Killing             pod/registration-757c8dd496-nrkjj    Stopping container registration
+14s         Normal    Scheduled           pod/registration-757c8dd496-pnj9n    Successfully assigned aitu-demo/registration-757c8dd496-pnj9n to desktop-control-plane
+14s         Normal    Pulled              pod/registration-757c8dd496-pnj9n    Container image "registration-demo:1.0.0" already present on machine and can be accessed by the pod
+14s         Normal    SuccessfulCreate    replicaset/registration-757c8dd496   Created pod: registration-757c8dd496-xmqs6
+14s         Normal    SuccessfulCreate    replicaset/registration-757c8dd496   Created pod: registration-757c8dd496-pnj9n
+14s         Normal    Created             pod/registration-757c8dd496-xmqs6    Container created
+14s         Normal    Pulled              pod/registration-757c8dd496-xmqs6    Container image "registration-demo:1.0.0" already present on machine and can be accessed by the pod
+14s         Normal    Scheduled           pod/registration-757c8dd496-xmqs6    Successfully assigned aitu-demo/registration-757c8dd496-xmqs6 to desktop-control-plane
+14s         Normal    Created             pod/registration-757c8dd496-pnj9n    Container created
+14s         Normal    ScalingReplicaSet   deployment/registration              Scaled up replica set registration-757c8dd496 from 0 to 2
+13s         Normal    Started             pod/registration-757c8dd496-xmqs6    Container started
+13s         Normal    Started             pod/registration-757c8dd496-pnj9n    Container started

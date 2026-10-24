@@ -1,0 +1,69 @@
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.244.0.10
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: desktop-control-plane
+    targetRef:
+      kind: Pod
+      name: registration-757c8dd496-pnj9n
+      namespace: aitu-demo
+      uid: 317cd99f-8893-4928-a0c2-de4c4408fc98
+  - addresses:
+    - 10.244.0.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: desktop-control-plane
+    targetRef:
+      kind: Pod
+      name: registration-757c8dd496-xmqs6
+      namespace: aitu-demo
+      uid: 1ff71e95-b296-411f-9683-c3b2e22f6eed
+  - addresses:
+    - 10.244.0.12
+    conditions:
+      ready: false
+      serving: false
+      terminating: false
+    nodeName: desktop-control-plane
+    targetRef:
+      kind: Pod
+      name: registration-6864c68c89-spwfc
+      namespace: aitu-demo
+      uid: 46b1d860-684f-4e64-809d-7ba19c415dad
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2026-10-24T23:07:47Z"
+    creationTimestamp: "2026-10-24T22:44:33Z"
+    generateName: registration-
+    generation: 25
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: registration
+    name: registration-lf6ck
+    namespace: aitu-demo
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: registration
+      uid: 1dbcabde-11b8-4b67-9ac9-c4e78d94e4cd
+    resourceVersion: "3111"
+    uid: 8a896928-6bb6-4f13-bb90-6e7b38933f2e
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+kind: List
+metadata:
+  resourceVersion: ""
