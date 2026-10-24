@@ -1,0 +1,3 @@
+NAME                            READY   STATUS    RESTARTS   AGE     IP           NODE                    NOMINATED NODE   READINESS GATES
+registration-757c8dd496-nrkjj   1/1     Running   0          2m58s   10.244.0.8   desktop-control-plane   <none>           <none>
+registration-757c8dd496-t5sjk   1/1     Running   0          78s     10.244.0.9   desktop-control-plane   <none>           <none>

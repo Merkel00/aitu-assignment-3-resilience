@@ -1,0 +1,4 @@
+id,name,detection_s,recovery_s,user_impact,method
+1,One Registration replica fails,10,20,"Second replica remains online; reduced headroom, possibly brief 5xx before removal",deterministic model; a failed endpoint removed after two readiness checks
+2,Both Registration replicas fail,10,25,Registration unavailable until first replacement is ready; other services unaffected,"deterministic model; deployment replaces pods, 25s startup assumption"
+3,Database becomes unavailable,10,185,DB-dependent registration requests fail; readiness removes both endpoints,"deterministic model; DB manually restored at t=180, next readiness check t=185"

@@ -1,0 +1,31 @@
+{
+  "type": "MODEL_ONLY",
+  "not_real_cluster_measurements": true,
+  "assumptions": "Reproducible deterministic MODEL, not a Kubernetes run. Standard library only.\nAssumptions: readiness poll 5s, 2 failed polls to remove a faulty endpoint;\ncontroller observes missing replica at t=5, replacement startup/readiness at t=20;\nall-replica scenario: 2 replacements come up at t=25;\nDB scenario: fail t=0, recognized t=10, DB repaired at t=180,\nready on next poll t=185. Results are scenario design inputs, not observations.",
+  "results": [
+    {
+      "id": 1,
+      "name": "One Registration replica fails",
+      "detection_s": 10,
+      "recovery_s": 20,
+      "user_impact": "Second replica remains online; reduced headroom, possibly brief 5xx before removal",
+      "method": "deterministic model; a failed endpoint removed after two readiness checks"
+    },
+    {
+      "id": 2,
+      "name": "Both Registration replicas fail",
+      "detection_s": 10,
+      "recovery_s": 25,
+      "user_impact": "Registration unavailable until first replacement is ready; other services unaffected",
+      "method": "deterministic model; deployment replaces pods, 25s startup assumption"
+    },
+    {
+      "id": 3,
+      "name": "Database becomes unavailable",
+      "detection_s": 10,
+      "recovery_s": 185,
+      "user_impact": "DB-dependent registration requests fail; readiness removes both endpoints",
+      "method": "deterministic model; DB manually restored at t=180, next readiness check t=185"
+    }
+  ]
+}

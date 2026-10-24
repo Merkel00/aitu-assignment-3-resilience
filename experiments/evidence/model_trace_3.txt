@@ -1,0 +1,5 @@
+MODEL EVENT TRACE — NOT KUBERNETES LOG
+t=000s failure injected (model)
+t=010s detection (model)
+t=185s service recovered (model)
+user impact: DB-dependent registration requests fail; readiness removes both endpoints
